@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp();
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "Granter Challenger",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
