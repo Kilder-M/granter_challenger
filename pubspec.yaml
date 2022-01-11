@@ -13,7 +13,7 @@ dependencies:
   flutter: 
     sdk: flutter
   get_cli: ^1.7.1
-  get: ^4.6.1
+  
   
 
 dev_dependencies: 
