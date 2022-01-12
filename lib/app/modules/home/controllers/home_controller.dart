@@ -5,14 +5,22 @@ import 'package:granter_challenger/app/data/services/product_service.dart';
 class HomeController extends GetxController {
   final _dao = ProductDAO();
   
-  var list = Future.value(<Product>[]);
+  var list = Future.value(<Product>[]).obs;
   
   HomeController(){
     refreshList();
   }
   
+  remove(dynamic id){
+    _dao.remove(id);
+    refreshList();
+  }
+
+  edit(Product product){
+    _dao.save(product);
+  }
 
   refreshList() {
-    list = _dao.find();
+    list.value = _dao.find();
   }
 }
