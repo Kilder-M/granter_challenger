@@ -30,6 +30,6 @@ class ProductDAO {
   }
 
   save(Product product) {
-    productCollection.doc(product.id).set({'id'});
+    productCollection.doc(product.id).set({'title': product.title,'type':product.type,'price': product.price},SetOptions(merge: true));
   }
 }

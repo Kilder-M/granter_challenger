@@ -1,6 +1,6 @@
 // To parse this JSON data, do
 //
-//     final product = productFromJson(jsonString);
+//      product = productFromJson(jsonString);
 
 import 'dart:convert';
 
@@ -16,15 +16,15 @@ class Product {
     this.price,
     this.rating,
   });
-  final dynamic id;
-  final String? title;
-  final String? type;
-  final String? description;
-  final String? filename;
-  final String? height;
-  final String? width;
-  final String? price;
-  final String? rating;
+   dynamic id;
+   String? title;
+   String? type;
+   String? description;
+   String? filename;
+   String? height;
+   String? width;
+   String? price;
+   String? rating;
 
   factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
 

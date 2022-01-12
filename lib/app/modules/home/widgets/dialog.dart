@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:granter_challenger/app/data/models/product_model.dart';
 import 'package:granter_challenger/app/modules/home/controllers/home_controller.dart';
+import 'package:granter_challenger/app/modules/home/views/update_view_view.dart';
 
 AlertDialog alertDialogProduct(
       BuildContext context, HomeController _controller, Product product) {
@@ -11,7 +12,10 @@ AlertDialog alertDialogProduct(
       ),
       actions: [
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.to(const UpdateView(),arguments: product);
+          },
           child: const Text('Editar'),
         ),
         TextButton(

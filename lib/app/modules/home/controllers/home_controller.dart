@@ -16,8 +16,10 @@ class HomeController extends GetxController {
     refreshList();
   }
 
-  edit(Product product){
+  save(Product product){
     _dao.save(product);
+    refreshList();
+
   }
 
   refreshList() {
