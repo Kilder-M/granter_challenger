@@ -40,7 +40,7 @@ class CardForListProducts extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor ?? Colors.white,
           borderRadius: BorderRadius.circular(borderRadius ?? 5),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 1,
               spreadRadius: 0.1,
@@ -130,6 +130,4 @@ class CardForListProducts extends StatelessWidget {
   }
 }
 
-TextStyle textStyle() {
-  return TextStyle(fontSize: 2);
-}
+

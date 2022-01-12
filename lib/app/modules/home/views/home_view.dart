@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:granter_challenger/app/data/models/product_model.dart';
 import 'package:granter_challenger/app/modules/home/widgets/dialog.dart';
+import 'package:granter_challenger/app/modules/home/widgets/title_text_style.dart';
 import 'package:granter_challenger/app/util/widgets/card_for_list_products.dart';
 
 import '../controllers/home_controller.dart';
@@ -71,11 +72,5 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  TextStyle titleTextStyle() {
-    return const TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 0.5,
-    );
-  }
+  
 }
