@@ -1,20 +1,18 @@
 import 'package:get/get.dart';
+import 'package:granter_challenger/app/data/models/product_model.dart';
+import 'package:granter_challenger/app/data/services/product_service.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final _dao = ProductDAO();
+  
+  var list = Future.value(<Product>[]);
+  
+  HomeController(){
+    refreshList();
   }
+  
 
-  @override
-  void onReady() {
-    super.onReady();
+  refreshList() {
+    list = _dao.find();
   }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
