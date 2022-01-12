@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "676018290313",
+    "project_id": "granter-challenger",
+    "storage_bucket": "granter-challenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676018290313:android:0ffead695d98d757541058",
+        "android_client_info": {
+          "package_name": "com.kilderMontinegro.granterChallenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676018290313-ostb81t19tkc8fm3s7r9hradtb6na40b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQStRdV1ebl5iP4QsvWk6TdwtpCJxzbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676018290313-ostb81t19tkc8fm3s7r9hradtb6na40b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "676018290313-2rjv2ogc8piohdupqgt6a8unae9mk1ko.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kilder-montinegro.granter-challenger"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
