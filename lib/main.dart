@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -6,7 +7,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'app/routes/app_pages.dart';
 
 void main() async {
-  await Firebase.initializeApp();
+   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp();
   runApp(
     GetMaterialApp(
       title: "Granter Challenger",
@@ -14,4 +16,7 @@ void main() async {
       getPages: AppPages.routes,
     ),
   );
+ 
+   
+  
 }
