@@ -28,7 +28,7 @@ class UpdateView extends GetView {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0,0,150,20),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 150, 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -55,33 +55,50 @@ class UpdateView extends GetView {
                           TextFormProduct(
                             title: 'Nome',
                             initialValue: product.title,
-                            onSaved: (value){
+                            onSaved: (value) {
                               product.title = value;
                             },
-                            
                           ),
                           TextFormProduct(
                             title: 'Tipo',
                             initialValue: product.type,
-                            onSaved: (value){
+                            onSaved: (value) {
                               product.type = value;
                             },
-                            
                           ),
                           TextFormProduct(
                             title: 'Preço',
                             initialValue: product.price,
                             keyboardType: TextInputType.number,
-                            onSaved: (value){
+                            onSaved: (value) {
                               product.price = value;
                             },
                           ),
-
-                          ElevatedButton(onPressed: (){
-                            form.currentState!.save();
-                            _controller.save(product);
-                            Get.back();
-                          }, child: const Text('Salvar'),)
+                          ElevatedButton(
+                            onPressed: () {
+                              form.currentState!.save();
+                              _controller.save(product);
+                              Get.back();
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  content: const Text(
+                                    'Produto atualizado! ',
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Get.back();
+                                      },
+                                      child: const Text('OK'),
+                                    ),
+                                  ],
+                                ),
+                              );
+                              
+                            },
+                            child: const Text('Salvar'),
+                          )
                         ],
                       ),
                     ),

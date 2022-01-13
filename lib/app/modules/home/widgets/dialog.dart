@@ -5,48 +5,64 @@ import 'package:granter_challenger/app/modules/home/controllers/home_controller.
 import 'package:granter_challenger/app/modules/home/views/update_view_view.dart';
 
 AlertDialog alertDialogProduct(
-      BuildContext context, HomeController _controller, Product product) {
-    return AlertDialog(
-      title: const Text(
-        'O que deseja fazer ?',
+    BuildContext context, HomeController _controller, Product product) {
+  return AlertDialog(
+    title: const Text(
+      'O que deseja fazer ?',
+    ),
+    actions: [
+      TextButton(
+        onPressed: () {
+          Get.back();
+          Get.to(const UpdateView(), arguments: product);
+        },
+        child: const Text('Editar'),
       ),
-      actions: [
-        TextButton(
-          onPressed: () {
-            Get.back();
-            Get.to(const UpdateView(),arguments: product);
-          },
-          child: const Text('Editar'),
-        ),
-        TextButton(
-          onPressed: () {
-            Get.back();
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                title: const Text(
-                  'Você Tem certeza ?',
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      _controller.remove(product.id);
-                      Get.back();
-                    },
-                    child: const Text('Sim'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    child: const Text('Não'),
-                  ),
-                ],
+      TextButton(
+        onPressed: () {
+          Get.back();
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text(
+                'Você Tem certeza ?',
               ),
-            );
-          },
-          child: const Text('Excluir'),
-        ),
-      ],
-    );
-  }
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    _controller.remove(product.id);
+                    Get.back();
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        content: const Text(
+                          'Produto deletado ! ',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Get.back();
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: const Text('Sim'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text('Não'),
+                ),
+              ],
+            ),
+          );
+        },
+        child: const Text('Excluir'),
+      ),
+    ],
+  );
+}
