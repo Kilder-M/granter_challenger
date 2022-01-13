@@ -1,16 +1,23 @@
 # granter_challenger
 
-A new Flutter project.
+Aplicativo que lista determinados produtos no qual voce pode editar,excluir e ver detalhes de um produto.
 
-## Getting Started
+## Observação.
+O projeto só está configurado para roda em dispositivos android.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Para instalar o projeto.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+1- Para rodar o projeto é necessário ter o flutter instalado na sua máquina, para isso, siga o tutorial da documentação oficial: https://flutter.dev/docs/get-started/install
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2- Com o flutter instalado, rode o comando "flutter doctor" e tenha certeza que está tudo ok.
+
+3- Conecte um aparelho no seu computador e tenha certeza que ele está com a opção de Ancoragem USB habilitada OU rode o emulador do android studio.
+
+4- Após resolver os warnings/issues do passo 2, e executar o passo 3 com sucesso, clone o projeto e abra um terminal no diretorio onde vc clonou-o.
+
+5- Agora basta executar o comando "flutter run" e o aplicativo será instalado e executado.
+
+
+
+
