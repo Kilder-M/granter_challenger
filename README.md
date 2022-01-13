@@ -16,7 +16,7 @@ O projeto só está configurado para roda em dispositivos android.
 
 4- Após resolver os warnings/issues do passo 2, e executar o passo 3 com sucesso, clone o projeto e abra um terminal no diretorio onde vc clonou-o.
 
-5- Agora basta executar o comando "flutter run" e o aplicativo será instalado e executado.
+5- Agora basta executar o comando "flutter run" e o aplicativo será instalado e executado (Somente em dispositivos android).
 
 
 
