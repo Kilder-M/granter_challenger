@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:granter_challenger/app/data/models/product_model.dart';
+import 'package:granter_challenger/app/modules/home/views/product_details_view.dart';
 import 'package:granter_challenger/app/modules/home/widgets/dialog.dart';
 import 'package:granter_challenger/app/modules/home/widgets/title_text_style.dart';
 import 'package:granter_challenger/app/util/widgets/card_for_list_products.dart';
@@ -43,23 +44,28 @@ class HomeView extends GetView<HomeController> {
                             itemCount: list!.length,
                             itemBuilder: (context, i) {
                               var product = list[i];
-                              return CardForListProducts(
-                                width: double.infinity,
-                                heigth: 70,
-                                title: product.title,
-                                subTitle: product.type,
-                                photoHeight: 55,
-                                photoWidth: 55,
-                                ratingNumber: product.rating,
-                                price: product.price,
-                                onTapIcon: () {
-                                  showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return alertDialogProduct(
-                                            context, _controller, product);
-                                      });
+                              return GestureDetector(
+                                onTap: (){
+                                  Get.to(const ProductDetailsView(),arguments: product);
                                 },
+                                child: CardForListProducts(
+                                  width: double.infinity,
+                                  heigth: 70,
+                                  title: product.title,
+                                  subTitle: product.type,
+                                  photoHeight: 55,
+                                  photoWidth: 55,
+                                  ratingNumber: product.rating,
+                                  price: product.price,
+                                  onTapIcon: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return alertDialogProduct(
+                                              context, _controller, product);
+                                        });
+                                  },
+                                ),
                               );
                             });
                       }
