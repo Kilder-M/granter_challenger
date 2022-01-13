@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
+import 'package:granter_challenger/app/data/dao/product_dao.dart';
 import 'package:granter_challenger/app/data/models/product_model.dart';
-import 'package:granter_challenger/app/data/services/product_service.dart';
 
 class HomeController extends GetxController {
   final _dao = ProductDAO();

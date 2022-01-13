@@ -11,11 +11,11 @@ import 'package:granter_challenger/app/util/widgets/card_for_list_products.dart'
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  
   const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var _controller = Get.put(HomeController());
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: Padding(
@@ -32,7 +32,7 @@ class HomeView extends GetView<HomeController> {
               ),
               Expanded(
                 child: FutureBuilder<List<Product>>(
-                    future: _controller.list.value,
+                    future: controller.list.value,
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
                         return const Center(
@@ -62,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                                         context: context,
                                         builder: (context) {
                                           return alertDialogProduct(
-                                              context, _controller, product);
+                                              context, controller, product);
                                         });
                                   },
                                 ),
