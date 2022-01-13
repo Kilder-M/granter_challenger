@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:granter_challenger/app/data/models/product_model.dart';
 import 'package:granter_challenger/app/modules/home/controllers/home_controller.dart';
+import 'package:granter_challenger/app/modules/home/views/home_view.dart';
 import 'package:granter_challenger/app/modules/home/widgets/text_form_product.dart';
 import 'package:granter_challenger/app/modules/home/widgets/title_text_style.dart';
 
@@ -78,7 +79,7 @@ class UpdateView extends GetView {
                             onPressed: () {
                               form.currentState!.save();
                               _controller.save(product);
-                              Get.back();
+                              Get.to( const HomeView());
                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
