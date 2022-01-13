@@ -1,6 +1,6 @@
 # granter_challenger
 
-Aplicativo que lista determinados produtos no qual voce pode editar,excluir e ver detalhes de um produto.
+Aplicativo com framework flutter que lista determinados produtos no qual voce pode editar,excluir e ver detalhes de um produto. Para a persistência dos dados, eu utilizei, o Cloud FireStore. Além dissso, foi utilizado GetX Pattern para arquitetura e estrutura de dados.
 
 ## Observação.
 O projeto só está configurado para roda em dispositivos android.
