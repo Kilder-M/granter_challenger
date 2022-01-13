@@ -1,8 +1,6 @@
-// To parse this JSON data, do
-//
-//      product = productFromJson(jsonString);
-
 import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Product {
   Product({
@@ -16,39 +14,40 @@ class Product {
     this.price,
     this.rating,
   });
-   dynamic id;
-   String? title;
-   String? type;
-   String? description;
-   String? filename;
-   String? height;
-   String? width;
-   String? price;
-   String? rating;
+  dynamic id;
+  String? title;
+  String? type;
+  String? description;
+  String? filename;
+  String? height;
+  String? width;
+  String? price;
+  String? rating;
 
-  factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
+  factory Product.fromRawJson(String str) => Product.fromDoc(json.decode(str));
 
-  String toRawJson() => json.encode(toJson());
+  // String toRawJson() => json.encode(toJson());
 
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
-        title: json["title"],
-        type: json["type"],
-        description: json["description"],
-        filename: json["filename"],
-        height: json["height"],
-        width: json["width"],
-        price: json["price"].toDouble(),
-        rating: json["rating"],
+  factory Product.fromDoc(QueryDocumentSnapshot<Object?> doc) => Product(
+        id: doc.reference.id.toString(),
+        filename: doc['filename'],
+        title: doc['title'],
+        description: doc['description'],
+        height: doc['height'],
+        price: doc['price'],
+        type: doc['type'],
+        rating: doc['rating'],
+        width: doc['width'],
       );
 
-  Map<String, dynamic> toJson() => {
-        "title": title,
-        "type": type,
-        "description": description,
-        "filename": filename,
-        "height": height,
-        "width": width,
-        "price": price,
-        "rating": rating,
-      };
+//   Map<String, dynamic> toJson() => {
+//         "title": title,
+//         "type": type,
+//         "description": description,
+//         "filename": filename,
+//         "height": height,
+//         "width": width,
+//         "price": price,
+//         "rating": rating,
+//       };
 }

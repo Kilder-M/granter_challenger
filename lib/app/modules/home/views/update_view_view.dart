@@ -7,13 +7,12 @@ import 'package:granter_challenger/app/modules/home/views/home_view.dart';
 import 'package:granter_challenger/app/modules/home/widgets/text_form_product.dart';
 import 'package:granter_challenger/app/modules/home/widgets/title_text_style.dart';
 
-class UpdateView extends GetView {
+class UpdateView extends GetView<HomeController> {
   const UpdateView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Product product = Get.arguments;
-    var _controller = Get.put(HomeController());
     var form = GlobalKey<FormState>();
     return Scaffold(
       backgroundColor: Colors.grey[100],
@@ -78,7 +77,7 @@ class UpdateView extends GetView {
                           ElevatedButton(
                             onPressed: () {
                               form.currentState!.save();
-                              _controller.save(product);
+                              controller.save(product);
                               Get.to( const HomeView());
                               showDialog(
                                 context: context,
